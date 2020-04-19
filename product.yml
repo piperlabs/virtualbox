@@ -1,0 +1,29 @@
+schema-version: 1.0
+name: virtualbox
+
+var:
+  version:
+  ifname: eth1
+  memory: 512
+  cpus: 1
+
+
+provision:
+  - url:
+      from: https://download.virtualbox.org/virtualbox/{{ version }}/VBoxGuestAdditions_{{ version }}.iso
+      to: /tmp
+      unpack: false
+  - url:
+      from: https://s3.eu-west-3.amazonaws.com/xbee.io/providers/linux_amd64/virtualbox/volumes
+      to: /opt/virtualbox
+      unpack: false
+      after: chmod u+x /opt/virtualbox/volumes
+
+  - shell: install.sh
+  - shell: nmcli connection add type ethernet con-name pipernet ifname {{ ifname }}
+  - shell: hosts.sh
+  - shell: /opt/virtualbox/volumes provision
+
+
+      
+
