@@ -14,15 +14,15 @@ provision:
       to: /tmp
       unpack: false
   - url:
-      from: https://s3.eu-west-3.amazonaws.com/xbee.io/providers/linux_amd64/virtualbox/volumes
-      to: /opt/virtualbox
+      from: https://s3.eu-west-3.amazonaws.com/xbee.io/providers/linux_amd64/virtualbox/guest
+      to: /opt/piper
       unpack: false
-      after: chmod u+x /opt/virtualbox/volumes
+      after: chmod u+x /opt/piper/guest
 
   - shell: install.sh
   - shell: nmcli connection add type ethernet con-name pipernet ifname {{ ifname }}
   - shell: hosts.sh
-  - shell: /opt/virtualbox/volumes provision
+  - shell: /opt/piper/guest provision
 
 
       
