@@ -24,6 +24,7 @@ provision:
   - shell: hosts.sh
   - shell: /opt/piper/guest provision
 
-
+up:
+  - shell: /opt/piper/guest mount
       
 
