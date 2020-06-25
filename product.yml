@@ -24,6 +24,7 @@ provision:
       after: chmod u+x /opt/piper/guest
 
   - shell: install.sh
+  - shell: nmcli connection add type ethernet con-name pipernet ifname {{ ifname }}
   - shell: hosts.sh
   - shell: /opt/piper/guest provision {{ alphabet }} {{ prefix }}
 
