@@ -1,0 +1,5 @@
+labels:
+  osid: centos
+actions:
+  - shell: nmcli connection add type ethernet con-name pipernet ifname {{ ifname }}
+
