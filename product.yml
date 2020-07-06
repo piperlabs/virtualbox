@@ -18,7 +18,7 @@ provision:
       to: /tmp
       unpack: false
   - url:
-      from: https://s3.eu-west-3.amazonaws.com/xbee.repository/providers/linux_amd64/guest
+      from: https://s3.eu-west-3.amazonaws.com/xbee.repository/providers/linux_amd64/guest.tar.gz
       to: /opt/piper
       after: chmod u+x /opt/piper/guest
 
