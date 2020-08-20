@@ -27,5 +27,9 @@ provision:
 
 up:
   - shell: /opt/piper/guest mount {{ alphabet }} {{ prefix }}
+
+down:
+  - shell: /opt/piper/guest umount
+
       
 

@@ -1,0 +1,18 @@
+{
+    "actions": [
+        {
+            "order": {
+                "phase": "shell"
+            },
+            "shell": {
+                "inlines": [
+                    "/opt/piper/guest mount abcdefgh s"
+                ]
+            }
+        }
+    ],
+    "async": false,
+    "container": {
+        "create": true
+    }
+}
