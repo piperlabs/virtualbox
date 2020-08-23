@@ -1,4 +1,4 @@
-cat <<EOF >/etc/netplan/02-netcfg.yaml;
+cat <<EOF >/etc/netplan/02-netcfg.yaml
 network:
   version: 2
   ethernets:
