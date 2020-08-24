@@ -1,4 +1,4 @@
-cat <<EOF >/etc/netplan/02-netcfg.yaml
+cat >/etc/netplan/02-netcfg.yaml <<EOF 
 network:
   version: 2
   ethernets:
@@ -6,3 +6,4 @@ network:
       dhcp4: true
 EOF
 netplan apply
+systemctl restart systemd-networkd
