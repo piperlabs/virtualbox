@@ -15,17 +15,17 @@ const:
 
 provision:
   - url:
-      from: https://download.virtualbox.org/virtualbox/{{ version }}/VBoxGuestAdditions_{{ version }}.iso
+      from: https://download.virtualbox.org/virtualbox/{{ .product.version }}/VBoxGuestAdditions_{{ .product.version }}.iso
       to: /tmp
       unpack: false
       after: install.sh
   - url:
       from: https://s3.eu-west-3.amazonaws.com/xbee.repository/providers/linux_amd64/guest.tar.gz
       to: /opt/piper
-      after: chmod u+x /opt/piper/guest && /opt/piper/guest provision {{ alphabet }} {{ prefix }}
+      after: chmod u+x /opt/piper/guest && /opt/piper/guest provision {% alphabet %} {% prefix %}
 
 
 
 up:
-  - shell: /opt/piper/guest mount {{ alphabet }} {{ prefix }}
+  - shell: /opt/piper/guest mount {% alphabet %} {% prefix %}
 
