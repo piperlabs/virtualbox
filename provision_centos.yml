@@ -1,6 +1,6 @@
 labels:
   osid: centos
 actions:
-  - shell: network_centos.sh
+  - shell: "{{ .templates }}/network_centos.sh"
   
 

@@ -1,6 +1,6 @@
 labels:
   osid: ubuntu
 actions:
-  - shell: network_ubuntu.sh
+  - shell: "{{ .templates }}/network_ubuntu.sh"
 
   
