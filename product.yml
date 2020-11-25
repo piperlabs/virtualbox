@@ -12,6 +12,12 @@ const:
   prefix: s #used for device mapping -> /dev/sd[x]
 
 
+bootstrap:
+  - url:
+      from: https://s3.eu-west-3.amazonaws.com/xbee.repository/providers/{{ .piper.os }}_{{ .piper.arch }}/virtualbox.tar.gz
+      to: "{{ .piper.cache }}/s3.eu-west-3.amazonaws.com/xbee.repository/providers/{{ .piper.os }}_{{ .piper.arch }}"
+
+
 provision:
   - url:
       from: https://download.virtualbox.org/virtualbox/{{ .product.version }}/VBoxGuestAdditions_{{ .product.version }}.iso
