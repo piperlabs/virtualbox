@@ -12,11 +12,10 @@ const:
   prefix: s #used for device mapping -> /dev/sd[x]
 
 
-bootstrap:
-  - url:
-      from: https://s3.eu-west-3.amazonaws.com/xbee.repository/providers/{{ .piper.os }}_{{ .piper.arch }}/virtualbox.tar.gz
-      to: "{{ .piper.cache }}/s3.eu-west-3.amazonaws.com/xbee.repository/providers/{{ .piper.os }}_{{ .piper.arch }}"
-
+#bootstrap:
+#  - url:
+#      from: https://s3.eu-west-3.amazonaws.com/xbee.repository/providers/{{ .piper.os }}_{{ .piper.arch }}/virtualbox.tar.gz
+#      to: "{{ .piper.cache }}/s3.eu-west-3.amazonaws.com/xbee.repository/providers/{{ .piper.os }}_{{ .piper.arch }}"
 
 provision:
   - url:
@@ -34,3 +33,6 @@ provision:
 up:
   - shell: /opt/piper/guest mount {% alphabet %} {% prefix %}
 
+
+command:
+  execute: "{{ .piper.cache }}/s3.eu-west-3.amazonaws.com/xbee.repository/providers/{{ .piper.os }}_{{ .piper.arch }}/virtualbox"
