@@ -7,11 +7,6 @@ var:
   cpus: 1
   ova:
 
-const:
-  alphabet: abcdefgh #used for device mapping. first volume is map to b, second to c ...
-  prefix: s #used for device mapping -> /dev/sd[x]
-
-
 #bootstrap:
 #  - url:
 #      from: https://s3.eu-west-3.amazonaws.com/xbee.repository/providers/{{ .piper.os }}_{{ .piper.arch }}/virtualbox.tar.gz
@@ -23,16 +18,6 @@ provision:
       to: /tmp
       unpack: false
       after: "{{ .templates }}/install.sh"
-  - url:
-      from: https://s3.eu-west-3.amazonaws.com/xbee.repository/providers/linux_amd64/guest.tar.gz
-      to: /opt/piper
-      after: chmod u+x /opt/piper/guest && /opt/piper/guest provision {% alphabet %} {% prefix %}
-
-
-
-up:
-  - shell: /opt/piper/guest mount {% alphabet %} {% prefix %}
-
 
 command:
   execute: "{{ .piper.cache }}/s3.eu-west-3.amazonaws.com/xbee.repository/providers/{{ .piper.os }}_{{ .piper.arch }}/virtualbox"
