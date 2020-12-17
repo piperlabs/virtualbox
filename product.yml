@@ -20,8 +20,7 @@ provision:
       after: "{{ .templates }}/install.sh"
 
 command:
-  execute: 
-    shell: "{{ .piper.cache }}/s3.eu-west-3.amazonaws.com/xbee.repository/providers/{{ .piper.os }}_{{ .piper.arch }}/virtualbox"
+  execute: "{{ .piper.cache }}/s3.eu-west-3.amazonaws.com/xbee.repository/providers/{{ .piper.os }}_{{ .piper.arch }}/virtualbox"
 
 
 
