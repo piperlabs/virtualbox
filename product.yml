@@ -7,10 +7,13 @@ var:
   cpus: 1
   ova:
 
-#bootstrap:
-#  - url:
-#      from: https://s3.eu-west-3.amazonaws.com/xbee.repository/providers/{{ .piper.os }}_{{ .piper.arch }}/virtualbox.tar.gz
-#      to: "{{ .piper.cache }}/s3.eu-west-3.amazonaws.com/xbee.repository/providers/{{ .piper.os }}_{{ .piper.arch }}"
+const:
+  path: s3.eu-west-3.amazonaws.com/xbee.repository/providers
+
+bootstrap:
+  - url:
+      from: https://{% path %}/{{ .piper.os }}_{{ .piper.arch }}/virtualbox.tar.gz
+      to: "{{ .piper.cache }}/{% path %}/{{ .piper.os }}_{{ .piper.arch }}"
 
 provision:
   - url:
@@ -20,7 +23,7 @@ provision:
       after: "{{ .templates }}/install.sh"
 
 command:
-  execute: "{{ .piper.cache }}/s3.eu-west-3.amazonaws.com/xbee.repository/providers/{{ .piper.os }}_{{ .piper.arch }}/virtualbox"
+  execute: "{{ .piper.cache }}/{% path %}/{{ .piper.os }}_{{ .piper.arch }}/virtualbox"
 
 
 
