@@ -1,0 +1,8 @@
+labels:
+  os: linux
+actions:
+  - url:
+      from: https://{% path %}/{{ .piper.os }}_{{ .piper.arch }}/{% piper.name %}.tar.gz
+      to: "{{ .piper.cache }}/{% path %}/{{ .piper.os }}_{{ .piper.arch }}"
+
+

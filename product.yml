@@ -10,10 +10,6 @@ var:
 const:
   path: s3.eu-west-3.amazonaws.com/xbee.repository/providers
 
-bootstrap:
-  - url:
-      from: https://{% path %}/{{ .piper.os }}_{{ .piper.arch }}/{% piper.name %}.tar.gz
-      to: "{{ .piper.cache }}/{% path %}/{{ .piper.os }}_{{ .piper.arch }}"
 
 provision:
   - url:

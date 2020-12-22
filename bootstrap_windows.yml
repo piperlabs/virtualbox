@@ -1,0 +1,8 @@
+labels:
+  os: windows
+actions:
+  - url:
+      from: https://{% path %}/{{ .piper.os }}_{{ .piper.arch }}/{% piper.name %}.zip
+      to: "{{ .piper.cache }}/{% path %}/{{ .piper.os }}_{{ .piper.arch }}"
+
+
