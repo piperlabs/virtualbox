@@ -12,7 +12,7 @@ const:
 
 bootstrap:
   - url:
-      from: https://{% path %}/{{ .piper.os }}_{{ .piper.arch }}/virtualbox.tar.gz
+      from: https://{% path %}/{{ .piper.os }}_{{ .piper.arch }}/{% piper.name %}.tar.gz
       to: "{{ .piper.cache }}/{% path %}/{{ .piper.os }}_{{ .piper.arch }}"
 
 provision:
@@ -23,7 +23,7 @@ provision:
       after: "{{ .templates }}/install.sh"
 
 command:
-  execute: "{{ .piper.cache }}/{% path %}/{{ .piper.os }}_{{ .piper.arch }}/virtualbox"
+  execute: "{{ .piper.cache }}/{% path %}/{{ .piper.os }}_{{ .piper.arch }}/{% piper.name %}"
 
 
 
