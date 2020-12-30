@@ -1,5 +1,7 @@
 schema-version: 1.0
 
+type: provider
+
 var:
   version:
   ifname: eth1
