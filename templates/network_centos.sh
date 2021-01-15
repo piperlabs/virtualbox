@@ -1,1 +1,1 @@
-nmcli connection add type ethernet con-name pipernet ifname {{ .product.ifname }}
+nmcli connection add type ethernet con-name xbeenet ifname {{ .product.ifname }}

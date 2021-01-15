@@ -1,5 +1,5 @@
 labels:
   os: windows
-execute: "{{ .piper.cache }}/{% path %}/{{ .piper.os }}_{{ .piper.arch }}/{% piper.name %}.exe"
+execute: "{{ .xbee.cache }}/{% path %}/{{ .xbee.os }}_{{ .xbee.arch }}/{% xbee.name %}.exe"
 
 
