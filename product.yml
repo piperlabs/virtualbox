@@ -16,7 +16,7 @@ const:
 
 provision:
   - url:
-      from: https://download.virtualbox.org/virtualbox/{{ .product.version }}/VBoxGuestAdditions_{{ .product.version }}.iso
+      from: https://download.virtualbox.org/virtualbox/{{ .product.masterVersion }}/VBoxGuestAdditions_{{ .product.masterVersion }}.iso
       to: /tmp
       unpack: false
       after: "{{ .templates }}/install.sh"
