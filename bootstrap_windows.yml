@@ -2,7 +2,7 @@ labels:
   os: windows
 actions:
   - url:
-      from: https://{% path %}/{{ .xbee.os }}_{{ .xbee.arch }}/{% xbee.name %}.zip
+      from: https://{% path %}/{{ .xbee.os }}_{{ .xbee.arch }}/{% xbee.name %}-{% xbee.version %}.zip
       to: "{{ .xbee.cache }}/{% path %}/{{ .xbee.os }}_{{ .xbee.arch }}"
 
 

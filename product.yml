@@ -4,6 +4,7 @@ type: provider
 
 var:
   version:
+  masterVersion:
   ifname: eth1
   memory: 512
   cpus: 1
