@@ -2,7 +2,7 @@ labels:
   os: linux
 actions:
   - url:
-      from: https://{% path %}/{{ .xbee.os }}_{{ .xbee.arch }}/{% xbee.name %}-{% xbee.version %}.tar.gz
+      from: https://{% path %}/{{ .xbee.os }}_{{ .xbee.arch }}/{% xbee.name %}-{% version %}.tar.gz
       to: "{{ .xbee.cache }}/{% path %}/{{ .xbee.os }}_{{ .xbee.arch }}"
 
 
